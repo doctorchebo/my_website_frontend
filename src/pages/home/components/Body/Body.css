@@ -1,3 +1,50 @@
 .body {
-  background-color: blueviolet;
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem;
+  align-items: center;
+  align-content: center;
+}
+
+p {
+  margin-top: 1.5rem;
+  font-weight: 300;
+  font-size: 1.3rem;
+  color: black;
+  text-align: left;
+  line-height: 2rem;
+}
+.images-frameworks{
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: space-around;
+}
+
+.images-frameworks > img {
+  max-height: 10rem;
+}
+
+.github-button {
+  border-radius: 1rem;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  padding: 1rem;
+  color: white;
+  background-color: var(--primary-color);
+}
+.github-link {
+  font-size: 1rem;
+  font-family: 'Share Tech', sans-serif;
+  color: white;
+  gap: 1rem;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+
+.github-button:active {
+  transform: scale(0.95);
 }

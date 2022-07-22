@@ -7,18 +7,20 @@
   font-family: 'Share Tech', sans-serif;
   font-size: 1.5rem;
   padding: 0.5rem;
+  position: fixed;
+  width: 100%;
 }
 
-a {
+.header-link {
   text-decoration: none;
   margin-right: 20px;
   color: white;
 }
 
-a:hover {
+.header-link:hover {
   color: var(--third-color);
 }
 
-a.active {
+.header-link.active {
   border-top: 0.2rem solid white;
 }

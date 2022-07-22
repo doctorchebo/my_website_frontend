@@ -9,16 +9,16 @@ const Header = () => {
 
   return (
     <header className='top-menu'>
-      <NavLink to={'/'} >
+      <NavLink className='header-link' to={'/'} >
         Home
       </NavLink>
-      <NavLink to={'/about'}>
+      <NavLink className='header-link' to={'/about'}>
         About
       </NavLink>
-      <NavLink to={'/project'}>
+      <NavLink className='header-link' to={'/project'}>
         Projects
       </NavLink>
-      <NavLink to={'/blog'}>
+      <NavLink className='header-link' to={'/blog'}>
         Blog
       </NavLink>
     </header>

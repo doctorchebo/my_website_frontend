@@ -11,9 +11,6 @@ const Home = () => {
       <div className='header'>
         <Header />
       </div>
-      <div className='personal-image'>
-        <ProfileImage />
-      </div>
       <div className='personal-card'>
         <PersonalCard />
       </div>

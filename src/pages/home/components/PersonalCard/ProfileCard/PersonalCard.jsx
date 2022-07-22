@@ -4,11 +4,13 @@ import locale from './locale/en.json';
 import EmailButton from './components/EmailButton/EmailButton';
 import { FaFacebook, FaYoutube, FaLinkedin } from 'react-icons/fa';
 import { IconContext } from 'react-icons';
+import ProfileImage from '../ProfileImage/ProfileImage';
 
 const PersonalCard = () => {
   const { title, subtitle } = locale;
   return (
     <div className='personal-card'>
+      <ProfileImage />
       <h3 className='title'>{title}</h3>
       <h4 className='subtitle'>{subtitle}</h4>
       <div className='email-button'>
