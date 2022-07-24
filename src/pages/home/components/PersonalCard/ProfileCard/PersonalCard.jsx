@@ -1,7 +1,7 @@
 import React from 'react';
 import './PersonalCard.css';
 import locale from './locale/en.json';
-import EmailButton from './components/EmailButton/EmailButton';
+import ContactButton from './components/ContactButton/ContactButton';
 import { FaFacebook, FaYoutube, FaLinkedin } from 'react-icons/fa';
 import { IconContext } from 'react-icons';
 import ProfileImage from '../ProfileImage/ProfileImage';
@@ -13,8 +13,8 @@ const PersonalCard = () => {
       <ProfileImage />
       <h3 className='title'>{title}</h3>
       <h4 className='subtitle'>{subtitle}</h4>
-      <div className='email-button'>
-        <EmailButton />
+      <div className='contact-button'>
+        <ContactButton />
       </div>
 
       <IconContext.Provider value={{ color: '#006699', size: 40 }}>

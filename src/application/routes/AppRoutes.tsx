@@ -1,16 +1,21 @@
-import React from 'react'
-import { Route, Routes } from 'react-router-dom'
-import Home from '../../pages/home/Home'
+import React from 'react';
+import { Route, Routes } from 'react-router-dom';
+import About from '../../pages/About/About';
+import Blog from '../../pages/Blog/Blog';
+import ContactMe from '../../pages/contactMe/ContactMe';
+import Home from '../../pages/home/Home';
+import Projects from '../../pages/Projects/Projects';
 
 const AppRoutes = () => {
   return (
     <Routes>
-        <Route path="/" element={<Home/>}/>
-        <Route path="/about" element={<Home/>}/>
-        <Route path="/projects" element={<Home/>}/>
-        <Route path="/blog" element={<Home/>}/>
+      <Route path='/' element={<Home />} />
+      <Route path='/about' element={<About />} />
+      <Route path='/contact_me' element={<ContactMe />} />
+      <Route path='/projects' element={<Projects />} />
+      <Route path='/blog' element={<Blog />} />
     </Routes>
-  )
-}
+  );
+};
 
-export default AppRoutes
+export default AppRoutes;

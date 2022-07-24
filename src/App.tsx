@@ -1,9 +1,9 @@
-import React from "react";
-import "./App.css";
-import Home from "./pages/home/Home";
+import React from 'react';
+import './App.css';
+import Navigator from './pages/Navigator';
 
 function App() {
-  return <Home />;
+  return <Navigator />;
 }
 
 export default App;
