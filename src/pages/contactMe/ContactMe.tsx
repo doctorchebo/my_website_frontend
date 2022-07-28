@@ -1,15 +1,18 @@
 import { Formik } from 'formik';
 import React from 'react';
+import Button from './components/Button/Button';
 import FormInput from './components/FormInput/FormInput';
+import './ContactMe.css';
 
 const ContactMe = () => {
   interface IErrors {
     name?: string;
     email?: string;
   }
+
   return (
     <div className='contact-me-container'>
-      <h1>Contact Me</h1>
+      <h1 className='title'>Contact Me</h1>
       <Formik
         initialValues={{ name: '', email: '' }}
         validate={(values) => {
@@ -40,8 +43,8 @@ const ContactMe = () => {
           isSubmitting,
           /* and other goodies */
         }) => (
-          <form onSubmit={handleSubmit}>
-            <input
+          <form className='contact-form' onSubmit={handleSubmit}>
+            <FormInput
               id='name'
               type='text'
               name='name'
@@ -50,9 +53,9 @@ const ContactMe = () => {
               value={values.name}
               placeholder='Name'
             />
-            {errors.name && touched.name && errors.name}
-            <input
-            id='name'
+            <span className='form-error'>{errors.name && touched.name && errors.name}</span>
+            <FormInput
+              id='name'
               type='email'
               name='email'
               onChange={handleChange}
@@ -60,10 +63,8 @@ const ContactMe = () => {
               value={values.email}
               placeholder='Email'
             />
-            {errors.email && touched.email && errors.email}
-            <button type='submit' disabled={isSubmitting}>
-              Submit
-            </button>
+            <span className='form-error'>{errors.email && touched.email && errors.email}</span>
+            <Button type='submit' disabled={isSubmitting} />
           </form>
         )}
       </Formik>

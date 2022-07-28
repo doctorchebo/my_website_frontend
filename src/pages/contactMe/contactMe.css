@@ -1,4 +1,23 @@
-.contact-me-container{
-    display: flex;
-    flex-direction: column;
+.contact-me-container {
+  margin-top: 3rem;
+  display: flex;
+  flex-direction: column;
+  max-width: 18rem;
+  background-color: rgb(185, 205, 223);
+  align-items: center;
+  padding: 1rem;
+  box-shadow: 0.5rem 0.5rem #888888;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-error {
+  color: red;
+  font-family: 'Share Tech', sans-serif;
+  font-weight: 300;
+  font-size: 1rem;
+  margin-left: 0.5rem;
 }

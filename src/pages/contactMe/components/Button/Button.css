@@ -1,0 +1,14 @@
+.form-button {
+  width: 8rem;
+  height: 2.5rem;
+  background-color: var(--third-color);
+  border-radius: 1rem;
+  color: white;
+  font-weight: 300;
+  border: none;
+  cursor: pointer;
+  font-family: 'Share Tech', sans-serif;
+  font-size: 1.5rem;
+  align-self: center;
+  margin: 0.5rem;
+}

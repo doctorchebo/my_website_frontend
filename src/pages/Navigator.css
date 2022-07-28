@@ -18,4 +18,5 @@
 .body {
   grid-column: 1/3;
   grid-row: 2/8;
+  justify-self: center;
 }

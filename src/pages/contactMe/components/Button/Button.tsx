@@ -1,9 +1,16 @@
-import React from 'react'
-
-const Button = () => {
-  return (
-    <div>Button</div>
-  )
+import React from 'react';
+import './Button.css';
+interface IFormButton {
+  type: 'button' | 'submit' | 'reset' | undefined;
+  disabled: boolean | undefined;
 }
 
-export default Button
+const Button: React.FC<IFormButton> = ({ type, disabled }) => {
+  return (
+    <button className='form-button' type={type} disabled={disabled}>
+      Send
+    </button>
+  );
+};
+
+export default Button;
