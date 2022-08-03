@@ -1,7 +1,7 @@
 .contact-button {
   width: 10rem;
   height: 3rem;
-  background-color: var(--primary-color);
+  background-color: var(--third-color);
   border-radius: 1rem;
   color: white;
   font-weight: 300;
@@ -14,4 +14,8 @@
 .contact-button:active{
     transform: scale(0.9);
     transition: 0.2s;
+}
+
+.contact-button:hover {
+  background-color: var(--primary-color);
 }

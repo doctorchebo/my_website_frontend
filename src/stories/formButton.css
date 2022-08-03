@@ -17,12 +17,15 @@
   background-color: gray;
 }
 .custom-button--small {
-  width: 250px;
-  height: 100px;
+  width: 5rem;
+  height: 2.5rem;
+  font-size: 1rem;
   font-weight: 300;
 }
 .custom-button--large {
-  width: 400px;
-  height: 200px;
-  font-weight: 500;
+  width: 6rem;
+  height: 3rem;
+  font-size: 1rem;
+  font-weight: 300;
+  font-weight: bold;
 }

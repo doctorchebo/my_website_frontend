@@ -12,3 +12,7 @@
   align-self: center;
   margin: 0.5rem;
 }
+
+.form-button:hover {
+  background-color: var(--primary-color);
+}

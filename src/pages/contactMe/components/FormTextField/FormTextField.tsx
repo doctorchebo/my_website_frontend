@@ -1,17 +1,15 @@
 import React from 'react';
-import './FormInput.css';
-interface IInputProps {
+import './FormTextField.css';
+interface IFormTextFieldProps {
   id: string;
-  type: string;
   name: string;
-  onChange?: (e: string | React.ChangeEvent<any>) => void;
-  onBlur?: (e: any) => void;
+  onChange: (e: string | React.ChangeEvent<any>) => void;
+  onBlur: (e: any) => void;
   value: string;
   placeholder: string;
 }
-const FormInput: React.FC<IInputProps> = ({
+const FormTextField: React.FC<IFormTextFieldProps> = ({
   id,
-  type,
   name,
   onChange,
   onBlur,
@@ -19,17 +17,16 @@ const FormInput: React.FC<IInputProps> = ({
   placeholder,
 }) => {
   return (
-    <input
-      className='form-input'
+    <textarea
+      className='form-text-field'
       id={id}
-      type={type}
       name={name}
       onChange={onChange}
       onBlur={onBlur}
       value={value}
       placeholder={placeholder}
-    ></input>
+    ></textarea>
   );
 };
 
-export default FormInput;
+export default FormTextField;

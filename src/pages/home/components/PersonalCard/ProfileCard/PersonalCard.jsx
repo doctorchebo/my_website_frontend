@@ -9,7 +9,7 @@ import ProfileImage from '../ProfileImage/ProfileImage';
 const PersonalCard = () => {
   const { title, subtitle } = locale;
   return (
-    <div className='personal-card'>
+    <div className='personal-card-container'>
       <ProfileImage />
       <h3 className='title'>{title}</h3>
       <h4 className='subtitle'>{subtitle}</h4>

@@ -1,7 +1,10 @@
 .body-container {
   display: flex;
   flex-direction: column;
-  padding: 2rem;
+  padding-top: 2rem;
+  padding-left: 4rem;
+  padding-right: 4rem;
+  padding-bottom: 4rem;
   align-items: center;
   align-content: center;
 }
@@ -11,7 +14,7 @@ p {
   font-weight: 300;
   font-size: 1.3rem;
   color: black;
-  text-align: left;
+  text-align: justify;
   line-height: 2rem;
 }
 .images-frameworks{
@@ -44,6 +47,9 @@ p {
   text-decoration: none;
 }
 
+.github-button:hover {
+  background-color: black;
+}
 
 .github-button:active {
   transform: scale(0.95);
