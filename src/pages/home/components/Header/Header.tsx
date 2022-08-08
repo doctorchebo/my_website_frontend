@@ -18,7 +18,7 @@ const Header = () => {
       <NavLink className='header-link' to={'/contact_me'}>
         Contact me
       </NavLink>
-      <NavLink className='header-link' to={'/project'}>
+      <NavLink className='header-link' to={'/projects'}>
         Projects
       </NavLink>
       <NavLink className='header-link' to={'/blog'}>
@@ -26,6 +26,9 @@ const Header = () => {
       </NavLink>
       <NavLink className='header-link' to={'/login'}>
         Login
+      </NavLink>
+      <NavLink className='header-link' to={'/logout'}>
+        Logout
       </NavLink>
     </header>
   );

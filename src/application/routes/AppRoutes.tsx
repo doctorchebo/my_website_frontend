@@ -5,6 +5,7 @@ import Blog from '../../pages/Blog/Blog';
 import ContactMe from '../../pages/contactMe/ContactMe';
 import Home from '../../pages/home/Home';
 import Login from '../../pages/login/Login';
+import Logout from '../../pages/Logout/Logout';
 import Projects from '../../pages/Projects/Projects';
 
 const AppRoutes = () => {
@@ -16,6 +17,7 @@ const AppRoutes = () => {
       <Route path='/projects' element={<Projects />} />
       <Route path='/blog' element={<Blog />} />
       <Route path='/login' element={<Login />} />
+      <Route path='/logout' element={<Logout />} />
     </Routes>
   );
 };

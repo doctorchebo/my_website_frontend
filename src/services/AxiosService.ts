@@ -26,8 +26,15 @@ class AxiosService {
         headers: { 'Content-Type': 'application/json' },
         withCredentials: true,
       })
-      .then((res) => localStorage.setItem('access_token', res.data.access))
+      .then((res) => {
+        localStorage.setItem('access_token', res.data.access);
+        console.log('LoggedIn');
+      })
       .catch((err) => console.log(err));
+  }
+  async logout() {
+    localStorage.removeItem('access_token');
+    console.log('logged out');
   }
 }
 

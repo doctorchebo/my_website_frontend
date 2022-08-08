@@ -1,9 +1,12 @@
-import React from 'react'
+import React from 'react';
+import Trivia from './Trivia/src/Trivia';
 
 const Projects = () => {
   return (
-    <div>Projects</div>
-  )
-}
+    <>
+      <Trivia />
+    </>
+  );
+};
 
-export default Projects
+export default Projects;
