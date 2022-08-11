@@ -2,6 +2,7 @@ import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 import About from '../../pages/About/About';
 import Blog from '../../pages/Blog/Blog';
+import Post from '../../pages/Blog/components/Post/Post';
 import ContactMe from '../../pages/contactMe/ContactMe';
 import Home from '../../pages/home/Home';
 import Login from '../../pages/login/Login';
@@ -15,7 +16,9 @@ const AppRoutes = () => {
       <Route path='/about' element={<About />} />
       <Route path='/contact_me' element={<ContactMe />} />
       <Route path='/projects' element={<Projects />} />
-      <Route path='/blog' element={<Blog />} />
+      <Route path='/blog' element={<Blog />}>
+        <Route path=':slug' element={<Post />} />
+      </Route>
       <Route path='/login' element={<Login />} />
       <Route path='/logout' element={<Logout />} />
     </Routes>

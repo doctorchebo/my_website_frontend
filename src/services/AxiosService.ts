@@ -36,6 +36,9 @@ class AxiosService {
     localStorage.removeItem('access_token');
     console.log('logged out');
   }
+  async getPosts(){
+    return axios.get(`${BASE_API_URL}blog/posts/`)
+  }
 }
 
 export default new AxiosService();

@@ -1,0 +1,12 @@
+.list-container {
+    display: flex;
+    align-items: center;
+}
+
+.storybook-list-element {
+    margin-right: 0.5rem
+}
+
+.storybook-list-element--horizontal {
+    flex-direction: column;
+}

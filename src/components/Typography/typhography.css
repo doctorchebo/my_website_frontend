@@ -1,0 +1,70 @@
+.storybook-typography {
+    padding: 0.5rem;
+    text-align: center;
+  }
+  
+  .storybook-typography-modern {
+    font-family: "Roboto", sans-serif;
+  }
+  
+  .storybook-typography-classic {
+    font-family: "Source Sans Pro", sans-serif;
+  }
+  
+  .storybook-typography-title {
+    font-family: "Source Sans Pro", sans-serif;
+  }
+  .storybook-typography-description {
+    line-height: 1.5rem;
+  }
+  
+  .storybook-typography-small {
+    font-size: 1rem;
+    font-weight: 300;
+  }
+  .storybook-typography-small-bold {
+    font-size: 1rem;
+    font-weight: 400;
+  }
+  .storybook-typography-medium {
+    font-size: 1.2rem;
+    font-weight: 300;
+  }
+  .storybook-typography-bold {
+    font-size: 1.2rem;
+    font-weight: 400;
+  }
+  .storybook-typography-large {
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+  .storybook-typography-large-bold {
+    font-size: 1.5rem;
+    font-weight: 900;
+  }
+  
+  .storybook-typography-right {
+    text-align: right;
+  }
+  .storybook-typography-left {
+    text-align: left;
+  }
+  
+  .storybook-typography-crossedOut {
+    text-decoration: line-through;
+  }
+  
+  .storybook-typography-white {
+    color: white;
+  }
+  .storybook-typography-green {
+    color: rgb(19, 97, 19);
+  }
+  .storybook-typography-red {
+    color: rgb(179, 41, 41);
+  }
+  .storybook-typography-gray {
+    color: rgb(56, 56, 56);
+  }
+  
+  
