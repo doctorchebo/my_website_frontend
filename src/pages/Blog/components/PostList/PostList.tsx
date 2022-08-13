@@ -33,23 +33,23 @@ const PostList = () => {
     AxiosService.getPosts().then((res) => {
       setPosts(res.data.results);
     });
-  }, [posts]);
+  }, []);
 
   return (
     <div>
       {posts?.map((post, index) => (
-          <PostCard
-            id={post.id}
-            title={post.title}
-            slug={post.slug}
-            image_url={post.image_url}
-            content={post.content}
-            created_at={post.created_at}
-            category={post.category}
-            key={index}
-          />
+        <PostCard
+          id={post.id}
+          title={post.title}
+          slug={post.slug}
+          image_url={post.image_url}
+          content={post.content}
+          created_at={post.created_at}
+          category={post.category}
+          key={index}
+        />
       ))}
-      <Outlet />
+      
     </div>
   );
 };

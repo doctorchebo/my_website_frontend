@@ -1,5 +1,5 @@
 import axios from 'axios';
-const BASE_API_URL = 'http://127.0.0.1:8000/';
+const BASE_API_URL = 'http://127.0.0.1:8000';
 
 interface IToken {
   token: {
@@ -9,8 +9,8 @@ interface IToken {
 }
 
 class AxiosService {
-  get() {
-    return axios.get(BASE_API_URL);
+  async getPost(slug: string | undefined){
+    return axios.get(`${BASE_API_URL}${slug}`);
   }
   async post(endpoint: string, data: any) {
     const URL = endpoint !== '' ? BASE_API_URL + endpoint : BASE_API_URL;
@@ -37,7 +37,7 @@ class AxiosService {
     console.log('logged out');
   }
   async getPosts(){
-    return axios.get(`${BASE_API_URL}blog/posts/`)
+    return axios.get(`${BASE_API_URL}/blog/posts/`)
   }
 }
 
