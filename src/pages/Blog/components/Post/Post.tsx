@@ -6,6 +6,9 @@ import AxiosService from '../../../../services/AxiosService';
 import moment from 'moment';
 
 import './post.css';
+import { useSelector } from 'react-redux';
+import { RootState } from '../../../../application/store/Store';
+import { useBlogStore } from '../../../../application/store/Reducers/BlogReducer/useBlogStore';
 
 export interface Category {
   id: number;
@@ -23,6 +26,7 @@ export interface IPost {
 }
 const Post = () => {
   const [post, setPost] = useState<IPost | null>(null);
+  const { blogs } = useBlogStore();
   // const timeAgo = moment(created_at).fromNow();
   const { slug } = useParams();
   console.log(`blog/posts/${slug}`);
@@ -35,10 +39,14 @@ const Post = () => {
 
   return (
     <div className='post-detail-view-container'>
-      <img className='post-image' src='https://www.infobae.com/new-resizer/CoWWMWYEWL5B41R8QdFiwwt4fIg=/1200x900/filters:format(webp):quality(85)//cloudfront-us-east-1.images.arcpublishing.com/infobae/RWJFE4PPSRGL3KTHP64JDYSVRY.png' alt='elmo' />
+      <img
+        className='post-image'
+        src='https://www.infobae.com/new-resizer/CoWWMWYEWL5B41R8QdFiwwt4fIg=/1200x900/filters:format(webp):quality(85)//cloudfront-us-east-1.images.arcpublishing.com/infobae/RWJFE4PPSRGL3KTHP64JDYSVRY.png'
+        alt='elmo'
+      />
       <Typhography
         color='#006699'
-        content="This is my first post"
+        content='This is my first post'
         position='left'
         size='large-bold'
       />
@@ -50,10 +58,7 @@ const Post = () => {
         )}
       />
       <Typhography content={`created: today`} position='left' />
-      <Typhography
-        content='This is my first post'
-        position='left'
-      />
+      <Typhography content='This is my first post' position='left' />
       {/* <h1>{JSON.stringify(post, null, 2)}</h1> */}
     </div>
   );

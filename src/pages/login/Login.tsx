@@ -1,5 +1,6 @@
 import { Formik } from 'formik';
 import React from 'react';
+import { useAuthStore } from '../../application/store/Reducers/AuthReducer/useAuthStore';
 import AxiosService from '../../services/AxiosService';
 import Button from '../contactMe/components/Button/Button';
 
@@ -7,19 +8,20 @@ import FormInput from '../contactMe/components/FormInput/FormInput';
 import './login.css';
 
 const Login = () => {
+  const { onLogin } = useAuthStore();
   interface IErrors {
-    username?: string;
+    email?: string;
     password?: string;
   }
   return (
     <div className='login-container'>
       <h1 className='title'>Login</h1>
       <Formik
-        initialValues={{ username: '', password: '' }}
+        initialValues={{ email: '', password: '' }}
         validate={(values) => {
           const errors: IErrors = {};
-          if (!values.username) {
-            errors.username = 'Please write your username';
+          if (!values.email) {
+            errors.email = 'Please write your email';
           } else if (!values.password) {
             errors.password = 'Please write a password';
           }
@@ -28,6 +30,7 @@ const Login = () => {
         onSubmit={(values, { setSubmitting }) => {
           alert(JSON.stringify(values, null, 2));
           AxiosService.login('authentication/login/', values);
+          // onLogin(values);
           setSubmitting(false);
         }}
       >
@@ -43,16 +46,16 @@ const Login = () => {
         }) => (
           <form className='login-form' onSubmit={handleSubmit}>
             <FormInput
-              id='username'
+              id='email'
               type='text'
-              name='username'
+              name='email'
               onChange={handleChange}
               onBlur={handleBlur}
-              value={values.username}
-              placeholder='username'
+              value={values.email}
+              placeholder='email'
             />
             <span className='form-error'>
-              {errors.username && touched.username && errors.username}
+              {errors.email && touched.email && errors.email}
             </span>
             <FormInput
               id='password'

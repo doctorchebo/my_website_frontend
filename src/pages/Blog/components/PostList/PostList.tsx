@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { NavLink } from 'react-router-dom';
-import { Outlet } from 'react-router-dom';
-import AxiosService from '../../../../services/AxiosService';
+import { useBlogStore } from '../../../../application/store/Reducers/BlogReducer/useBlogStore';
 import PostCard from '../PostCard/PostCard';
 
 export interface Category {
@@ -28,30 +26,16 @@ export interface IPost {
 }
 
 const PostList = () => {
+  const { onGetPosts, blogs } = useBlogStore();
   const [posts, setPosts] = useState<Result[] | null>(null);
   useEffect(() => {
-    AxiosService.getPosts().then((res) => {
-      setPosts(res.data.results);
-    });
+    // AxiosService.getPosts().then((res) => {
+    //   setPosts(res.data.results);
+    // });
+    onGetPosts();
   }, []);
 
-  return (
-    <div>
-      {posts?.map((post, index) => (
-        <PostCard
-          id={post.id}
-          title={post.title}
-          slug={post.slug}
-          image_url={post.image_url}
-          content={post.content}
-          created_at={post.created_at}
-          category={post.category}
-          key={index}
-        />
-      ))}
-      
-    </div>
-  );
+  return <div>{JSON.stringify(blogs.posts, null, 2)}</div>;
 };
 
 export default PostList;
