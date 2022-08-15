@@ -8,6 +8,12 @@ import FormTextField from './components/FormTextField/FormTextField';
 import Modal from './components/Modal/Modal';
 import './ContactMe.css';
 
+export interface IContactMe {
+  name: string;
+  email: string;
+  message: string;
+}
+
 const ContactMe = () => {
   interface IErrors {
     name?: string;
@@ -33,10 +39,10 @@ const ContactMe = () => {
           }
           return errors;
         }}
-        onSubmit={(values, { setSubmitting }) => {
+        onSubmit={(values: IContactMe, { setSubmitting }) => {
           alert(JSON.stringify(values, null, 2));
           setModal(true);
-          AxiosService.post('email/contact_me/', values);
+          AxiosService.contactMe(values);
           setSubmitting(false);
         }}
       >

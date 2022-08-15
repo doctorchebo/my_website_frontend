@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { useAuthStore } from '../../../../application/store/Reducers/AuthReducer/useAuthStore';
 import { useBlogStore } from '../../../../application/store/Reducers/BlogReducer/useBlogStore';
 import PostCard from '../PostCard/PostCard';
 
@@ -26,12 +27,9 @@ export interface IPost {
 }
 
 const PostList = () => {
+  const { auth, onLogout } = useAuthStore();
   const { onGetPosts, blogs } = useBlogStore();
-  const [posts, setPosts] = useState<Result[] | null>(null);
   useEffect(() => {
-    // AxiosService.getPosts().then((res) => {
-    //   setPosts(res.data.results);
-    // });
     onGetPosts();
   }, []);
 

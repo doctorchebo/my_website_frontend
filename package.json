@@ -15,6 +15,7 @@
     "@types/react-router-dom": "^5.3.3",
     "axios": "^0.27.2",
     "formik": "^2.2.9",
+    "marcelo_library": "^1.0.4",
     "moment": "^2.29.4",
     "nanoid": "^4.0.0",
     "react": "^18.2.0",

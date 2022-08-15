@@ -1,13 +1,12 @@
 import React from 'react';
-import AxiosService from '../../services/AxiosService';
+import { useAuthStore } from '../../application/store/Reducers/AuthReducer/useAuthStore';
 
 const Logout = () => {
-  const handleLogout = () => {
-    AxiosService.logout();
-  };
+  const { onLogout } = useAuthStore();
+
   return (
     <div className='body-container'>
-      <button onClick={handleLogout}>Logout</button>
+      <button onClick={() => onLogout()}>Logout</button>
     </div>
   );
 };

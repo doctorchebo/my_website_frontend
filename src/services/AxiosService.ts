@@ -1,6 +1,8 @@
-import axios from 'axios';
-const BASE_API_URL = 'http://127.0.0.1:8000';
-
+import { getRefreshToken } from '../application/helpers/actions';
+import { IContactMe } from '../pages/contactMe/ContactMe';
+import authApi from './AuthAPI';
+import blogApi from './BlogAPI';
+import emailApi from './EmailAPI';
 interface IToken {
   token: {
     access: string;
@@ -8,36 +10,32 @@ interface IToken {
   };
 }
 
+export interface IRefreshToken {
+  refresh: string;
+}
+
 class AxiosService {
-  async getPost(slug: string | undefined){
-    return axios.get(`${BASE_API_URL}${slug}`);
-  }
-  async post(endpoint: string, data: any) {
-    const URL = endpoint !== '' ? BASE_API_URL + endpoint : BASE_API_URL;
-    return axios
-      .post(URL, data)
-      .then((res) => console.log(res))
-      .catch((err) => console.log(err));
+  async getPost(slug: string) {
+    return blogApi.get(slug);
   }
   async login(endpoint: string, data: any): Promise<any> {
-    const URL = endpoint !== '' ? BASE_API_URL + endpoint : BASE_API_URL;
-    return axios
-      .post(URL, data, {
-        headers: { 'Content-Type': 'application/json' },
-        withCredentials: true,
-      })
-      .then((res) => {
-        localStorage.setItem('access_token', res.data.access);
-        console.log('LoggedIn');
-      })
-      .catch((err) => console.log(err));
+    return authApi.post(endpoint, data);
   }
   async logout() {
     localStorage.removeItem('access_token');
-    console.log('logged out');
   }
-  async getPosts(){
-    return axios.get(`${BASE_API_URL}/blog/posts/`)
+
+  async refreshToken() {
+    return authApi.post('refresh-token/', {
+      refresh: localStorage.getItem('refresh_token'),
+    });
+  }
+  async getPosts() {
+    return blogApi.get('posts/');
+  }
+
+  async contactMe(data: IContactMe) {
+    return emailApi.post('contact_me/', data);
   }
 }
 

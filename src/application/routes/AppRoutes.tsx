@@ -9,18 +9,30 @@ import Login from '../../pages/login/Login';
 import Logout from '../../pages/Logout/Logout';
 import NotFound from '../../pages/NotFound/NotFound';
 import Projects from '../../pages/Projects/Projects';
+import { useAuthStore } from '../store/Reducers/AuthReducer/useAuthStore';
+import Protected from './Protected';
 
 const AppRoutes = () => {
+  const { auth } = useAuthStore();
   return (
     <Routes>
       <Route path='/' element={<Home />} />
       <Route path='about' element={<About />} />
       <Route path='contact_me' element={<ContactMe />} />
       <Route path='projects' element={<Projects />} />
-      <Route path='blog' element={<Blog />}/>
-      <Route path='blog/:slug' element={<Post />} />
-      <Route path='login' element={<Login />} />
-      <Route path='logout' element={<Logout />} />
+      <Route path='blog' element={<Blog />} />
+      <Route
+        element={<Protected hasAccess={auth.isLoggedIn} redirect={'/login'} />}
+      >
+        <Route path='blog/:slug'></Route>
+        <Route path='logout' element={<Logout />} />
+      </Route>
+      <Route
+        element={<Protected hasAccess={!auth.isLoggedIn} redirect={'/'} />}
+      >
+        <Route path='login' element={<Login />} />
+      </Route>
+
       <Route path='*' element={<NotFound />} />
     </Routes>
   );

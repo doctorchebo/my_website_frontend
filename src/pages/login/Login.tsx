@@ -1,11 +1,14 @@
 import { Formik } from 'formik';
 import React from 'react';
 import { useAuthStore } from '../../application/store/Reducers/AuthReducer/useAuthStore';
-import AxiosService from '../../services/AxiosService';
 import Button from '../contactMe/components/Button/Button';
-
 import FormInput from '../contactMe/components/FormInput/FormInput';
 import './login.css';
+
+export interface ICredentials {
+  email: string;
+  password: string;
+}
 
 const Login = () => {
   const { onLogin } = useAuthStore();
@@ -27,10 +30,9 @@ const Login = () => {
           }
           return errors;
         }}
-        onSubmit={(values, { setSubmitting }) => {
+        onSubmit={(values: ICredentials, { setSubmitting }) => {
           alert(JSON.stringify(values, null, 2));
-          AxiosService.login('authentication/login/', values);
-          // onLogin(values);
+          onLogin(values);
           setSubmitting(false);
         }}
       >
