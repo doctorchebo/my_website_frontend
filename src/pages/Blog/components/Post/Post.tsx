@@ -1,15 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
+import Container from '../../../../components/Container/Container';
 import List from '../../../../components/List/List';
 import Typhography from '../../../../components/Typography/Typhography';
 import AxiosService from '../../../../services/AxiosService';
-import moment from 'moment';
+import { Button } from '../../../../stories/Button';
 
 import './post.css';
-import { useSelector } from 'react-redux';
-import { RootState } from '../../../../application/store/Store';
-import { useBlogStore } from '../../../../application/store/Reducers/BlogReducer/useBlogStore';
-
 export interface Category {
   id: number;
   name: string;
@@ -26,40 +23,58 @@ export interface IPost {
 }
 const Post = () => {
   const [post, setPost] = useState<IPost | null>(null);
-  const { blogs } = useBlogStore();
-  // const timeAgo = moment(created_at).fromNow();
   const { slug } = useParams();
-  console.log(`blog/posts/${slug}`);
+  const navigate = useNavigate();
 
   useEffect(() => {
-    AxiosService.getPost(`/blog/posts/${slug}/`).then((res) =>
-      setPost(res.data)
-    );
+    AxiosService.getPost(`/posts/${slug}/`).then((res) => setPost(res.data));
+    window.scrollTo({ top: -10, left: 0, behavior: 'smooth' });
   }, []);
 
+  const handleClick = () => {
+    navigate('/blog');
+  };
+
   return (
-    <div className='post-detail-view-container'>
-      <img
-        className='post-image'
-        src='https://www.infobae.com/new-resizer/CoWWMWYEWL5B41R8QdFiwwt4fIg=/1200x900/filters:format(webp):quality(85)//cloudfront-us-east-1.images.arcpublishing.com/infobae/RWJFE4PPSRGL3KTHP64JDYSVRY.png'
-        alt='elmo'
-      />
-      <Typhography
-        color='#006699'
-        content='This is my first post'
-        position='left'
-        size='large-bold'
-      />
-      <List
-        direction='horizontal'
-        items={['tech', 'social']}
-        builder={(item) => (
-          <Typhography content={`#${item.name}`} position='left' size='small' />
-        )}
-      />
-      <Typhography content={`created: today`} position='left' />
-      <Typhography content='This is my first post' position='left' />
-      {/* <h1>{JSON.stringify(post, null, 2)}</h1> */}
+    <div className='post-container'>
+      <div>
+        <Button
+          size='medium'
+          onClick={handleClick}
+          primary
+          label={'Back'}
+          backgroundColor={'#0191C8'}
+        />
+      </div>
+
+      {post && (
+        <div className='post-content'>
+          <Typhography
+            color='#006699'
+            content={post.title}
+            position='center'
+            size={3}
+          />
+          <div className='image-container'>
+            <img className='post-image' src={post.image_url} alt='alt_image' />
+          </div>
+          <div className='info-container'>
+            <List
+              direction='horizontal'
+              items={post!.category}
+              builder={(item) => (
+                <Typhography
+                  content={`#${item.name}`}
+                  position='left'
+                  size='small'
+                />
+              )}
+            />
+            <Typhography content={`created: today`} position='left' />
+          </div>
+          <Typhography content={post.content} position='left' size='medium' />
+        </div>
+      )}
     </div>
   );
 };

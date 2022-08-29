@@ -1,6 +1,28 @@
-.post-detail-view-container {
+.post-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.post-content {
     display: flex;
     flex-direction: column;
     padding: 1rem;
-    border: 1px solid red;
+}
+
+.image-container {
+    max-width: 100%;
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+}
+
+.info-container {
+    display: flex;
+    justify-items: space-around;
+    margin-bottom: 1rem;
+}
+
+@media (min-width: 767px) {
+    .post-content {
+        width: 50rem;;
+    }    
 }

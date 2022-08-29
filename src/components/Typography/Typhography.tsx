@@ -11,7 +11,8 @@ export interface TyphographyProps {
     | 'medium'
     | 'medium-bold'
     | 'large'
-    | 'large-bold';
+    | 'large-bold'
+    | number
   position?: 'left' | 'right' | 'center';
   color?: 'green' | 'red' | 'black' | 'white' | 'gray' | string;
   crossedOut?: boolean;
@@ -28,9 +29,10 @@ const Typhography = ({
 }: TyphographyProps) => {
   const crossed = crossedOut && 'storybook-typography-crossedOut';
   const customColor = color.startsWith('#') && color;
+  const sizeCustom = typeof(size)==='number' && size;
   return (
     <div
-      style={{ color: `${customColor}` }}
+      style={{ color: `${customColor}`, fontSize: `${sizeCustom}rem`}}
       className={[
         'storybook-typography',
         `storybook-typography-${type}`,

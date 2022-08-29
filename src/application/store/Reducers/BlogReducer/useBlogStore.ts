@@ -6,9 +6,9 @@ import { onGetPosts } from './actions';
 
 export const useBlogStore = () => {
   const dispatch = useAppDispatch();
-  const blogs = useSelector((state: RootState) => state.blog);
+  const blog = useSelector((state: RootState) => state.blog);
   const onGetPostsCallback = useCallback(() => {
     dispatch(onGetPosts());
   }, [dispatch]);
-  return { blogs, onGetPosts: onGetPostsCallback };
+  return { blog, onGetPosts: onGetPostsCallback };
 };

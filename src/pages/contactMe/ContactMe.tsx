@@ -1,5 +1,5 @@
 import { Formik } from 'formik';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import AxiosService from '../../services/AxiosService';
 import { FormButton } from '../../stories/FormButton/FormButton';
 import Button from './components/Button/Button';
@@ -21,6 +21,11 @@ const ContactMe = () => {
     message?: string;
   }
   const [modal, setModal] = useState(false);
+
+  useEffect(() => {
+    window.scrollTo({ top: -10, left: 0, behavior: 'smooth' });
+  }, []);
+
   return (
     <div className='contact-me-container'>
       <h1 className='title'>Contact Me</h1>

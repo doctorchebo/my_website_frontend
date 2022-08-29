@@ -2,7 +2,7 @@ import React from 'react';
 import { Result } from '../PostList/PostList';
 import './PostCard.css';
 import moment from 'moment';
-import { NavLink, useLocation } from 'react-router-dom';
+import { NavLink, useLocation, useNavigate } from 'react-router-dom';
 import Typhography from '../../../../components/Typography/Typhography';
 import List from '../../../../components/List/List';
 
@@ -18,15 +18,21 @@ const PostCard = ({
 }: Result) => {
   const timeAgo = moment(created_at).fromNow();
   const location = useLocation();
+  const navigate = useNavigate();
   console.log('slug =>' + slug);
   console.log('location =>' + location.pathname);
-  const route = `${location.pathname}/${slug}`
+  const route = `${location.pathname}/${slug}`;
   console.log('complete route =>' + route);
+  const handleClick = (slug: string) =>{
+    navigate(`${location.pathname}/${slug}`)
+  }
   return (
-    <div className='post-container' key={key} id={slug}>
-      <NavLink to={`${location.pathname}/${slug}`}>
-        <img className='post-image' src={image_url} alt={title} />
-      </NavLink>
+    <div
+      className='postcard-container'
+      key={key}
+      id={slug}
+      onClick={() => handleClick(slug)}
+    >
       <div className='post-content'>
         <Typhography
           color='#006699'

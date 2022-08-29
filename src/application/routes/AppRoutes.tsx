@@ -20,11 +20,11 @@ const AppRoutes = () => {
       <Route path='about' element={<About />} />
       <Route path='contact_me' element={<ContactMe />} />
       <Route path='projects' element={<Projects />} />
-      <Route path='blog' element={<Blog />} />
+      <Route path='blog' element={<Blog />}/>
+      <Route path='blog/:slug' element={<Post/>}/>
       <Route
         element={<Protected hasAccess={auth.isLoggedIn} redirect={'/login'} />}
       >
-        <Route path='blog/:slug'></Route>
         <Route path='logout' element={<Logout />} />
       </Route>
       <Route

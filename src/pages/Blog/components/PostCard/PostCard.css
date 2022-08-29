@@ -1,10 +1,17 @@
-.post-container {
+.postcard-container {
   width: 90%;
-  background-color: var(--form-color);
   padding: 1rem;
   margin: 1rem;
   display: flex;
   box-shadow: 0.5rem 0.5rem var(--primary-color);
+}
+
+.postcard-container:hover {
+  background-color: rgb(218, 230, 236);
+}
+
+.postcard-container:hover {
+  cursor: pointer;
 }
 
 .categories {
@@ -12,7 +19,7 @@
 }
 
 .post-image {
-  max-width: 25rem;
+  max-width: 100%;
   border-radius: 0.5rem;
 }
 
