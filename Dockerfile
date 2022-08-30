@@ -7,8 +7,8 @@ COPY . .
 RUN yarn build
 
 FROM nginx:latest
-WORKDIR /usr/share/nginx/html
+WORKDIR /app
 RUN rm -rf ./*
-COPY docker/nginx/nginx.conf /etc/nginx/conf.d/
-COPY --from=build /app/build .
+COPY --from=build /app/build /usr/share/nginx/html
+COPY --from=build /app/nginx.conf /etc/nginx/conf.d/default.conf
 
