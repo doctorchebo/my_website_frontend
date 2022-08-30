@@ -11,5 +11,4 @@ WORKDIR /usr/share/nginx/html
 RUN rm -rf ./*
 COPY docker/nginx/example.conf /etc/nginx/conf.d/
 COPY --from=build /app/build .
-COPY nginx.conf /etc/nginx/nginx.conf
 
