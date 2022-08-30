@@ -6,7 +6,7 @@ import Button from './components/Button/Button';
 import FormInput from './components/FormInput/FormInput';
 import FormTextField from './components/FormTextField/FormTextField';
 import Modal from './components/Modal/Modal';
-import './contactMe.css';
+import './styles.css';
 
 export interface IContactMe {
   name: string;
