@@ -5,11 +5,18 @@ import List from '../../../../components/List/List';
 import Typhography from '../../../../components/Typography/Typhography';
 import AxiosService from '../../../../services/AxiosService';
 import { Button } from '../../../../stories/Button';
+import CommentList from '../CommentList/CommentList';
 
 import './post.css';
 export interface Category {
   id: number;
   name: string;
+}
+
+export interface Comment {
+  id: number;
+  author: number;
+  comment: string;
 }
 
 export interface IPost {
@@ -20,6 +27,7 @@ export interface IPost {
   content: string;
   created_at: string;
   category: Category[];
+  comments: Comment[];
 }
 const Post = () => {
   const [post, setPost] = useState<IPost | null>(null);
@@ -36,44 +44,51 @@ const Post = () => {
   };
 
   return (
-    <div className='post-container'>
-      <div>
-        <Button
-          size='medium'
-          onClick={handleClick}
-          primary
-          label={'Back'}
-          backgroundColor={'#0191C8'}
-        />
-      </div>
-
+    <div className='body-container'>
       {post && (
-        <div className='post-content'>
-          <Typhography
-            color='#006699'
-            content={post.title}
-            position='center'
-            size={3}
-          />
-          <div className='image-container'>
-            <img className='post-image' src={post.image_url} alt='alt_image' />
-          </div>
-          <div className='info-container'>
-            <List
-              direction='horizontal'
-              items={post!.category}
-              builder={(item) => (
-                <Typhography
-                  content={`#${item.name}`}
-                  position='left'
-                  size='small'
-                />
-              )}
+        <>
+          <div>{JSON.stringify(post, null, 2)}</div>
+          <div className='header-container'>
+            <Button
+              size='medium'
+              onClick={handleClick}
+              primary
+              label={'Back'}
+              backgroundColor={'#0191C8'}
             />
-            <Typhography content={`created: today`} position='left' />
+            <Typhography
+              color='#006699'
+              content={post.title}
+              position='center'
+              size={3}
+            />
           </div>
-          <Typhography content={post.content} position='left' size='medium' />
-        </div>
+          <div className='post-content'>
+            <div className='image-container'>
+              <img
+                className='post-image'
+                src={post.image_url}
+                alt='alt_image'
+              />
+            </div>
+            <div className='info-container'>
+              <List
+                direction='horizontal'
+                items={post!.category}
+                builder={(item) => (
+                  <Typhography
+                    content={`#${item.name}`}
+                    position='left'
+                    size='small'
+                  />
+                )}
+              />
+              <Typhography content={`created: today`} position='left' />
+            </div>
+            <Typhography content={post.content} position='left' size='medium' />
+          </div>
+          <CommentList comments={post.comments}/>
+        </>
       )}
     </div>
   );
