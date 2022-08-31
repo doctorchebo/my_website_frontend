@@ -1,0 +1,7 @@
+version: 'latest'
+services:
+  frontend:
+    container_name: frontend-personal-website
+    build: .
+    ports:
+      - "3000:80"
