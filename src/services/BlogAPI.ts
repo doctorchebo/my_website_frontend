@@ -37,7 +37,6 @@ blogApi.interceptors.response.use(
           .then((res) => {
             config.headers['Authorization'] = `Bearer ${res.data.access}`;
             localStorage.setItem('access_token', res.data.access);
-            console.log('config =>' + JSON.stringify(config));
             return axios(config);
           })
           .catch((error) => {

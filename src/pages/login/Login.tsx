@@ -1,6 +1,7 @@
 import { Formik } from 'formik';
 import React from 'react';
 import { useAuthStore } from '../../application/store/Reducers/AuthReducer/useAuthStore';
+import Typhography from '../../components/Typography/Typhography';
 import Button from '../contactMe/components/Button/Button';
 import FormInput from '../contactMe/components/FormInput/FormInput';
 import './login.css';
@@ -17,8 +18,8 @@ const Login = () => {
     password?: string;
   }
   return (
-    <div className='login-container'>
-      <h1 className='title'>Login</h1>
+    <div className='body-container'>
+      <Typhography  content={'Login'} size={2} color={'#006699'} />
       <Formik
         initialValues={{ email: '', password: '' }}
         validate={(values) => {

@@ -18,7 +18,7 @@ const Blog = () => {
     };
   }, []);
   return (
-    <div className='blog-container'>
+    <div className='body-container'>
       <PostList />
     </div>
   );

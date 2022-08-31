@@ -13,7 +13,7 @@ export interface TyphographyProps {
     | 'large'
     | 'large-bold'
     | number
-  position?: 'left' | 'right' | 'center';
+  position?: 'left' | 'right' | 'center' | 'justify';
   color?: 'green' | 'red' | 'black' | 'white' | 'gray' | string;
   crossedOut?: boolean;
 }

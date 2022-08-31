@@ -10,9 +10,6 @@ const Navigator = () => {
       <div className='header'>
         <Header />
       </div>
-      <div className='personal-card'>
-        <PersonalCard />
-      </div>
       <div className='body'>
         <AppRoutes />
       </div>

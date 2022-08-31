@@ -1,19 +1,22 @@
 .top-menu {
   background-color: var(--primary-color);
-  text-align: right;
+  text-align: center;
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;  
   align-items: center;
   font-family: 'Share Tech', sans-serif;
-  font-size: 1.5rem;
+  font-size: 0.9rem;
   padding: 0.5rem;
   position: fixed;
+  padding-right: 1rem;
+  padding-left: 1rem;
   width: 100%;
 }
 
 .header-link {
   text-decoration: none;
-  margin-right: 20px;
+  padding-right:0.5rem;
+  padding-left:0.5rem;
   color: white;
 }
 
@@ -25,8 +28,13 @@
   border-top: 0.2rem solid white;
 }
 
-@media (max-width:430px){
+@media (min-width:768px){
   .top-menu {
-    font-size: 1rem;
+    font-size: 1.5rem;;
+  }
+  .header-link {
+    padding-right:1rem;
+    padding-left:1rem;
   }
 }
+

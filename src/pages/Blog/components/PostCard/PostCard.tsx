@@ -19,10 +19,7 @@ const PostCard = ({
   const timeAgo = moment(created_at).fromNow();
   const location = useLocation();
   const navigate = useNavigate();
-  console.log('slug =>' + slug);
-  console.log('location =>' + location.pathname);
   const route = `${location.pathname}/${slug}`;
-  console.log('complete route =>' + route);
   const handleClick = (slug: string) =>{
     navigate(`${location.pathname}/${slug}`)
   }

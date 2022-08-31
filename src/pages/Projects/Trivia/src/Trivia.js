@@ -60,7 +60,6 @@ export default function Trivia() {
   }
 
   function handleSelection(id, index) {
-    console.log("id, index => " + id, index);
     setQuestions((oldQuestions) => {
       return oldQuestions.map((question) => {
         return question.id === id

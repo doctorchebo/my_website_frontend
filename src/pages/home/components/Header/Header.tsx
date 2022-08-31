@@ -5,7 +5,6 @@ import './Header.css';
 
 const Header = () => {
   const { auth } = useAuthStore();
-  console.log(JSON.stringify(auth));
 
   return (
     <header className='top-menu'>

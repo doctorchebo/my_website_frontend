@@ -13,18 +13,21 @@
   
   .storybook-typography-title {
     font-family: "Source Sans Pro", sans-serif;
+    line-height: 2.8rem;
   }
   .storybook-typography-description {
     line-height: 1.5rem;
   }
   
   .storybook-typography-small {
-    font-size: 1rem;
+    font-size: 1.5rem;
     font-weight: 300;
+    line-height: 1.8rem;
   }
   .storybook-typography-small-bold {
-    font-size: 1rem;
+    font-size: 1.5rem;
     font-weight: 400;
+    line-height: 1.8rem;
   }
   .storybook-typography-medium {
     font-size: 1.2rem;
@@ -48,6 +51,9 @@
   }
   .storybook-typography-left {
     text-align: left;
+  }
+  .storybook-typography-justify {
+    text-align: justify;
   }
   
   .storybook-typography-crossedOut {

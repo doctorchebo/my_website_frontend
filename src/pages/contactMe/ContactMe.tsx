@@ -1,5 +1,6 @@
 import { Formik } from 'formik';
 import React, { useEffect, useState } from 'react';
+import Typhography from '../../components/Typography/Typhography';
 import AxiosService from '../../services/AxiosService';
 import { FormButton } from '../../stories/FormButton/FormButton';
 import Button from './components/Button/Button';
@@ -27,8 +28,8 @@ const ContactMe = () => {
   }, []);
 
   return (
-    <div className='contact-me-container'>
-      <h1 className='title'>Contact Me</h1>
+    <div className='body-container'>
+      <Typhography content='Contact Me' size={2} color='#006699' type='title'/>
       <Formik
         initialValues={{ name: '', email: '', message: '' }}
         validate={(values) => {
