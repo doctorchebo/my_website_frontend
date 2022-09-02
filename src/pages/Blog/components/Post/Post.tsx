@@ -47,7 +47,7 @@ const Post = () => {
     <div className='body-container'>
       {post && (
         <>
-          <div>{JSON.stringify(post, null, 2)}</div>
+          {/* <div>{JSON.stringify(post, null, 2)}</div> */}
           <div className='header-container'>
             <Button
               size='medium'
@@ -87,7 +87,7 @@ const Post = () => {
             </div>
             <Typhography content={post.content} position='left' size='medium' />
           </div>
-          <CommentList comments={post.comments}/>
+          {/* <CommentList comments={post.comments}/> */}
         </>
       )}
     </div>
