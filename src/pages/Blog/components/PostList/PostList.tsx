@@ -37,7 +37,7 @@ const PostList = () => {
   return (
     <div>
       <div className="blogList-container">
-      <Typhography content={'Welcome to my Blog'} size={2} color={'#006699'} />
+      <Typhography content={'Welcome to my Blog'} size='large-bold' color={'#006699'} />
         {blog.posts.map((post) => {
           return (
             <PostCard

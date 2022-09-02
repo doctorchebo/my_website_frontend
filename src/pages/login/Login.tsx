@@ -19,7 +19,7 @@ const Login = () => {
   }
   return (
     <div className='body-container'>
-      <Typhography  content={'Login'} size={2} color={'#006699'} />
+      <Typhography  content={'Login'} size='large-bold' color={'#006699'} />
       <Formik
         initialValues={{ email: '', password: '' }}
         validate={(values) => {

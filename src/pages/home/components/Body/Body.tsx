@@ -10,16 +10,40 @@ const Body = () => {
   const { title, content, content1, content2, content3 } = body;
   return (
     <div className='body-container'>
-      <Typhography content={title} size={2} color='#006699' type='title'/>
-      <Typhography content={content} size='small' type='description' position='justify' />
-      <Typhography content={content1} size='small' type='description' position='justify' />
+      <div>
+        <Typhography content={title} size='large-bold' color='#006699' type='title' />
+        <Typhography
+          content={content}
+          size='medium'
+          type='description'
+          position='justify'
+        />
+        <Typhography
+          content={content1}
+          size='medium'
+          type='description'
+          position='justify'
+        />
+        <Typhography
+          content={content2}
+          size='medium'
+          type='description'
+          position='justify'
+        />
+        <Typhography
+          content={content3}
+          size='medium'
+          type='description'
+          position='justify'
+        />
+      </div>
+
       <div className='images-frameworks'>
         <img src={react} alt='react' />
         <img src={spring} alt='react' />
         <img src={django} alt='react' />
       </div>
-      <Typhography content={content2} size='small' type='description' position='justify' />
-      <Typhography content={content3} size='small' type='description' position='justify' />
+
       <button className='github-button'>
         <a className='github-link' href='https://github.com/doctorchebo'>
           GitHub <FaGithub size={40} color={'white'} />

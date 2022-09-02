@@ -29,7 +29,7 @@ const ContactMe = () => {
 
   return (
     <div className='body-container'>
-      <Typhography content='Contact Me' size={2} color='#006699' type='title'/>
+      <Typhography content='Contact Me' size='large-bold' color='#006699' type='title' />
       <Formik
         initialValues={{ name: '', email: '', message: '' }}
         validate={(values) => {

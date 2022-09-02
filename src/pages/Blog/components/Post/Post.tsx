@@ -33,6 +33,7 @@ const Post = () => {
   const [post, setPost] = useState<IPost | null>(null);
   const { slug } = useParams();
   const navigate = useNavigate();
+  const contentbyParagraphs = post?.content.split('\r\n\r\n');
 
   useEffect(() => {
     AxiosService.getPost(`/posts/${slug}/`).then((res) => setPost(res.data));
@@ -50,7 +51,7 @@ const Post = () => {
           {/* <div>{JSON.stringify(post, null, 2)}</div> */}
           <div className='header-container'>
             <Button
-              size='medium'
+              size='small'
               onClick={handleClick}
               primary
               label={'Back'}
@@ -60,17 +61,11 @@ const Post = () => {
               color='#006699'
               content={post.title}
               position='center'
-              size={3}
+              size='large-bold'
             />
           </div>
           <div className='post-content'>
-            <div className='image-container'>
-              <img
-                className='post-image'
-                src={post.image_url}
-                alt='alt_image'
-              />
-            </div>
+            <img src={post.image_url} alt='alt_image' />
             <div className='info-container'>
               <List
                 direction='horizontal'
@@ -85,7 +80,11 @@ const Post = () => {
               />
               <Typhography content={`created: today`} position='left' />
             </div>
-            <Typhography content={post.content} position='left' size='medium' />
+            {contentbyParagraphs?.map((p) => {
+              return (
+                <Typhography content={p} position='justify' size='medium' />
+              );
+            })}
           </div>
           {/* <CommentList comments={post.comments}/> */}
         </>

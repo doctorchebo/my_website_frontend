@@ -6,10 +6,10 @@ const About = () => {
   return (
     <div className='body-container'>
       <div>
-        <Typhography content={title} size={2} color='#006699' type='title' />
-        <Typhography content={content1} type='description' position='justify' />
-        <Typhography content={content2} type='description' position='justify' />
-        <Typhography content={content3} type='description' position='justify' />
+        <Typhography content={title} size='large-bold' color='#006699' type='title' />
+        <Typhography content={content1} type='description' position='justify' size='medium'/>
+        <Typhography content={content2} type='description' position='justify' size='medium'/>
+        <Typhography content={content3} type='description' position='justify' size='medium'/>
       </div>
     </div>
   );

@@ -1,9 +1,12 @@
 .postcard-container {
-  width: 90%;
-  padding: 1rem;
-  margin: 1rem;
+  width: 80%;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
   display: flex;
   box-shadow: 0.5rem 0.5rem var(--primary-color);
+  border: 1.5px solid rgba(41, 101, 170, 0.8);
 }
 
 .postcard-container:hover {
@@ -18,12 +21,9 @@
   display: flex;
 }
 
-.post-image {
-  max-width: 100%;
-  border-radius: 0.5rem;
-}
-
-.post-content {
-  padding: 1rem;
+@media (max-width: 767px) {
+  .postcard-container {
+    width: 100%;
+  }
 }
 
