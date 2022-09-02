@@ -4,7 +4,7 @@ EXPOSE 80
 COPY package.json ./
 RUN yarn
 COPY . .
-RUN yarn build
+RUN yarn build:prod
 
 FROM nginx:latest
 WORKDIR /app
