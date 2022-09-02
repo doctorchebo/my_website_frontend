@@ -4,7 +4,7 @@ import { removeTokens } from '../application/helpers/actions';
 import authApi from './AuthAPI';
 import AxiosService from './AxiosService';
 
-const BASE_BLOG_API_URL = 'http://127.0.0.1:8000/blog/';
+const BASE_BLOG_API_URL = process.env.REACT_APP_BLOG_API_URL;
 const blogApi = axios.create({
   baseURL: BASE_BLOG_API_URL,
   headers: {
