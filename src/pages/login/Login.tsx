@@ -32,7 +32,7 @@ const Login = () => {
           return errors;
         }}
         onSubmit={(values: ICredentials, { setSubmitting }) => {
-          alert(JSON.stringify(values, null, 2));
+          // alert(JSON.stringify(values, null, 2));
           onLogin(values);
           setSubmitting(false);
         }}

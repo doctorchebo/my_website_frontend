@@ -46,7 +46,7 @@ const ContactMe = () => {
           return errors;
         }}
         onSubmit={(values: IContactMe, { setSubmitting }) => {
-          alert(JSON.stringify(values, null, 2));
+          // alert(JSON.stringify(values, null, 2));
           setModal(true);
           AxiosService.contactMe(values);
           setSubmitting(false);
